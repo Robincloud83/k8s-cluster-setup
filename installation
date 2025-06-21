@@ -1,0 +1,48 @@
+#### 1. Update the package list:
+sudo apt update
+
+## 2. Install Docker with the following command:
+sudo apt install docker.io -y
+
+## Installing Docker on Ubuntu 22.04.
+3. Set Docker to launch on boot by entering:
+
+sudo systemctl enable docker
+Copy
+4. Verify Docker is running:
+
+sudo systemctl status docker
+Copy
+Viewing Docker service status.
+5. If Docker is not running, start it with the following command:
+
+sudo systemctl start docker
+
+### Install Kubernetes
+
+###  Step 1: Add Kubernetes Signing Key
+### Since Kubernetes comes from a non-standard repository, download the signing key to ensure the software is authentic.
+###  On each node, use the curl command to download the key and store it in a safe place (default is /etc/apt/keyrings/:
+
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+
+####  Step 2: Add Software Repositories
+####   Kubernetes is not included in the default Ubuntu repositories. To add the Kubernetes repository to your list, enter this command on each node:
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+
+sudo apt update
+
+###   Step 3: Install Kubernetes Tools
+####  Each Kubernetes deployment consists of three separate tools:
+
+### Kubeadm. A tool that initializes a Kubernetes cluster by fast-tracking the setup using community-sourced best practices.
+####  Kubelet. The work package that runs on every node and starts containers. The tool gives you command-line access to clusters.
+#### Kubectl. The command-line interface for interacting with clusters.
+#### Execute the following commands on each server node to install the Kubernetes tools:
+
+##  1. Run the install command:
+sudo apt install kubeadm kubelet kubectl
+
+
+
+#####    Run these cmds on k8s master and worker's server 
