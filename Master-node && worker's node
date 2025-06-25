@@ -21,7 +21,7 @@ br_netfilter
 sudo modprobe overlay
 sudo modprobe br_netfilter
 
-### 5. Open the kubernetes.conf file to configure Kubernetes networking:
+### 5. Open kubernetes.conf file to configure Kubernetes networking:
 sudo nano /etc/sysctl.d/kubernetes.conf
 ### 6. Add the following lines to the file:
 net.bridge.bridge-nf-call-ip6tables = 1
@@ -43,7 +43,7 @@ sudo hostnamectl set-hostname worker01
 
 ### If you have additional worker nodes, use this process to set a unique hostname on each.
 ### 3. Edit the hosts file on each worker's node by adding the IP addresses and hostnames of the servers that will be part of the cluster.
-172.31.6.150   master-node      ### its important in worker's server to host entry of master server
+172.31.6.150   master-node      ### its important in worker's server to host entry of master server with private IP
 Editing the hosts file.
 
 
