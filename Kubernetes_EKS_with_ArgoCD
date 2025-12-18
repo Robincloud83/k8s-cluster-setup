@@ -13,6 +13,7 @@ https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html
 ##############################################################################################################################
 ##################### Create AWS EKS clsuster ################################################################################
 ## Create EKS cluster
+eksctl create  cluster --name two-tier-app  --region ap-south-1 --node-type t3.small --nodes-min 2 --nodes-max 3
 eksctl create cluster --name eksargocd --node-type t2.large --nodes 1 --nodes-min 1 --nodes-max 2 --region us-east-1 --zones=us-east-1a,us-east-1b,us-east-1c
 
 ## Get EKS Cluster service
